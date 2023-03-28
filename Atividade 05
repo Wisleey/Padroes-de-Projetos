@@ -1,0 +1,26 @@
+5. Crie um algoritmo que receba via construtor o valor do salário mínimo e o valor do salário de um usuário, calcule a quantidade de salários mínimos esse usuário ganha e imprima o resultado.
+(1SM=R$1320,00)
+##########################################
+
+package At5;
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa wisley = new Pessoa(1320,3960);
+        Integer quantidade = wisley.salario_usuario/wisley.salario_min;
+        System.out.printf("A quantidade de salarios minimos que essa pessoa ganha e: %d",quantidade);
+    }
+}
+
+
+package At5;
+
+public class Pessoa  {
+    Integer wisley_min;
+    Integer salario_usuario;
+
+    public Pessoa(Integer salario_min, Integer salario_usuario) {
+        this.salario_min = salario_min;
+        this.salario_usuario = salario_usuario;
+    }
+}
