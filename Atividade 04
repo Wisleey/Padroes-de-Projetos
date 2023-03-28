@@ -1,0 +1,68 @@
+4. Escrever um algoritmo que receba via construtor:
+- a porcentagem do IPI a ser acrescido no valor das peças
+- o código da peça 1, valor unitário da peça 1, quantidade de peças 1
+- o código da peça 2, valor unitário da peça 2, quantidade de peças 2
+O algoritmo deve calcular o valor total a ser pago e apresentar o resultado.
+Fórmula : (valor1*quant1 + valor2*quant2)*(IPI/100 + 1)
+#######################################################################
+
+package Ex4;
+
+public class Loja {
+    public static void main(String[] args) {
+        Produto1 pneu = new Produto1(30,10.0,10);
+        Produto2 mola = new Produto2(63,15.0,2);
+        IPI valor_ipi = new IPI(18.0);
+
+        Double total_produto1 = pneu.valor*pneu.quantidade;
+        Double total_produto2 = mola.valor*mola.quantidade;
+        Double estoque = total_produto1+total_produto2; //130
+
+        Double valor_final = (valor_ipi.ipi/100+1)*estoque;
+        System.out.printf("O valor final e: %.2f",valor_final);
+    }
+}
+
+
+
+package Ex4;
+
+public class Produto1 {
+    Integer cod_produto;
+    Double valor;
+    Integer quantidade;
+
+    public Produto1(Integer cod_produto, Double valor, Integer quantidade) {
+        this.cod_produto = cod_produto;
+        this.valor = valor;
+        this.quantidade = quantidade;
+    }
+}
+
+
+
+
+package Ex4;
+
+public class Produto2 {
+    Integer cod_produto;
+    Double valor;
+    Integer quantidade;
+
+    public Produto2(Integer cod_produto, Double valor, Integer quantidade) {
+        this.cod_produto = cod_produto;
+        this.valor = valor;
+        this.quantidade = quantidade;
+    }
+}
+
+
+package Ex4;
+
+public class IPI {
+    Double ipi;
+
+    public IPI(Double ipi) {
+        this.ipi = ipi;
+    }
+}
