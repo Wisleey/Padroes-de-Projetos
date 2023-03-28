@@ -1,3 +1,36 @@
 1. Faça um algoritmo que receba via constutor a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa em dias.
 Obs.: Leve em consideração o ano com 365 dias e o mês com 30
 (Ex: 3 anos, 2 meses e 15 dias = 1170 dias.)
+###########################################################
+
+
+
+package At1;
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa Wisley = new Pessoa(3,2,15);
+        Integer tempo_vida = Wisley.idade_anos * 365 + Wisley.idade_meses * 30 + Wisley.idade_dias;
+        System.out.printf("Tempo de vida em dias ", tempo_vida );
+    }
+
+}
+
+
+
+
+package At1;
+
+public class Pessoa {
+    Integer idade_anos;
+    Integer idade_meses;
+    Integer idade_dias;
+
+
+    public Pessoa(Integer idade_anos, Integer idade_meses, Integer idade_dias) {
+        this.idade_anos = idade_anos;
+        this.idade_meses = idade_meses;
+        this.idade_dias = idade_dias;
+
+    }
+}
